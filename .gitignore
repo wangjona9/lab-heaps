@@ -23,5 +23,14 @@
 hs_err_pid*
 replay_pid*
 
-# Temporary files
+# VSCode/Eclipse stuff
+bin
+
+# Random temp files
 *.swp
+*~
+*.bak
+~*
+
+# Annoying Mac files
+.DS_Store
