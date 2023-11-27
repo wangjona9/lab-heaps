@@ -183,7 +183,18 @@ public class Heap<T> implements LinearStructure<T> {
    * necessary.
    */
   void heapDown(int i) {
-    // STUB
+    int n = values.size() - 1;
+    ArrayUtils.swap(values, i, n);
+    boolean check = true;
+    while (check){ //remember to update i
+      if(priority.compare(values.get(i), values.get(left(i))) > 0){
+        System.out.println("unimplemented");
+      }else if (priority.compare(values.get(i), values.get(right(i))) > 0){
+        System.out.println("unimplemented");
+      }else{
+        check = false;
+      }
+    }
   } // heapDown(i)
 
   /**
@@ -191,7 +202,17 @@ public class Heap<T> implements LinearStructure<T> {
    * with respect to its ancestors by swapping up as necessary.
    */
   void heapUp(int i) {
-    // STUB
+
+    if (i == 0){
+      return;
+    }
+   
+    if (priority.compare(values.get(parent(i)), values.get(i)) > 0){
+      System.out.println("parent: " +parent(i)+ " i: " + i);
+      ArrayUtils.swap(values, parent(i), i);
+      heapUp(parent(i));
+    }
+    
   } // heapUp(i)
 
   /**
