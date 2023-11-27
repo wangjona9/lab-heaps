@@ -18,7 +18,8 @@ public class HeapSorter implements Sorter {
   // | Constructors |
   // +--------------+
 
-  private HeapSorter() { }
+  private HeapSorter() { 
+  } // HeapSorter()
 
   // +---------+-----------------------------------------------------
   // | Methods |
@@ -28,19 +29,17 @@ public class HeapSorter implements Sorter {
    * Sort using an out-of-place heapsort.
    */
   public <T> void sort(T[] values, Comparator<? super T> order) {
-    // Create a new heap in which the largest value is at the top
-    Heap<T> heap = new Heap<T>((x,y) -> order.compare(y,x));
-    // Add all the elements to the heap.
+    // Put all the values in an ArrayList.
+    ArrayList<T> lst = new ArrayList<T>();
     for (int i = 0; i < values.length; i++) {
-      heap.put(values[i]);
+      lst.add(values[i]);
     } // for
+
+    // Create a new heap in which the largest value is at the top
+    Heap<T> heap = new Heap<T>(lst, (x,y) -> order.compare(y,x));
+
     // Remove all the values from the heap, putting them back in values.
-    for (int i = values.length-1; i >= 0; i--) {
-      try {
-        values[i] = heap.get();
-      } catch (Exception e) {
-      }
-    } // for
+    // TODO: Fill in the details
   } // sort(T[], Comparator<T>)
 
 } // class HeapSorter
