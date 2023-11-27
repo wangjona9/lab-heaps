@@ -151,7 +151,7 @@ public class Heap<T> implements LinearStructure<T> {
    * Print the heap in a semi-readable form.
    */
   public void dump(PrintWriter pen) {
-    this.dump(pen, 0, "");
+    this.dump(pen, 0, "  ");
   } // dump(PrintWriter)
 
   /**
