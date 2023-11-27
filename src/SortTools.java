@@ -113,7 +113,7 @@ public class SortTools {
     try {
       s.sort(strings, order);
       if (pen != null) {
-        pen.println("  Successfully sorted empty array.");
+        pen.println("  Successfully sorted empty array.  Trying others.");
       } // if
     } catch (Exception e) {
       if (pen != null) {
